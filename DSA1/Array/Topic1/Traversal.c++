@@ -11,4 +11,5 @@ int main(){
     }
 
 }
+
 ///By Traversal it means printing the array
