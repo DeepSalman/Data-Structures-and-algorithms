@@ -7,3 +7,9 @@ Different Data structures:
 --Queue : Records
 
 Fundamental Data structure : Array, Linked list
+<h5>--Linear: arrays,lists</h5>
+<h5>--Tree  : Binary,heaps,space,partitioning </h5>
+<h5>--Stack : Files</h5>
+<h5>--Queue : Records</h5>
+<h5></h5>
+<h5></h5>
