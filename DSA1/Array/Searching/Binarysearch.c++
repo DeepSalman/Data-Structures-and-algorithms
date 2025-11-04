@@ -12,7 +12,7 @@ int main() {
         cin >> arr[i];
     }
 
-    //Step 1: Sort the array using Bubble Sort
+
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
@@ -28,16 +28,16 @@ int main() {
         cout << arr[i] << " ";
     }
 
-    // Step 2: Take search element
+
     cout << "\n\nEnter value to search: ";
     cin >> key;
 
-    //Step 3: Binary Search
+
     int low = 0, high = n - 1;
     bool found = false;
 
     while (low <= high) {
-        int mid = (low + high) / 2;
+        int mid = low + (high - low) / 2;
 
         if (arr[mid] == key) {
             cout << "Element found at position " << mid + 1 << endl;
@@ -55,3 +55,4 @@ int main() {
 
     return 0;
 }
+

@@ -27,8 +27,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/workspaces/Data-Structures-and-algorithms/DSA1/Array/Topic1",
-      "program": "/workspaces/Data-Structures-and-algorithms/DSA1/Array/Topic1/build/Debug/outDebug",
+      "cwd": "/workspaces/Data-Structures-and-algorithms/DSA1/Array/Searching",
+      "program": "/workspaces/Data-Structures-and-algorithms/DSA1/Array/Searching/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
