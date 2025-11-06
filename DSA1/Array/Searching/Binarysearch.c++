@@ -37,7 +37,7 @@ int main() {
     bool found = false;
 
     while (low <= high) {
-        int mid = low + (high - low) / 2;
+        int mid = (high +low) / 2;
 
         if (arr[mid] == key) {
             cout << "Element found at position " << mid + 1 << endl;
