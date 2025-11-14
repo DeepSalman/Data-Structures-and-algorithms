@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "merge",
+      "request": "launch",
+      "mainClass": "DSA1.Array.Sorting.merge",
+      "projectName": "Data-Structures-and-algorithms_6550b5a6"
+    },
+    {
       "name": "(gdb) Attach",
       "type": "cppdbg",
       "request": "attach",
