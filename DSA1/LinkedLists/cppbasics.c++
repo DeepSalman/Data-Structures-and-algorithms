@@ -8,6 +8,8 @@
 #include <iostream>
 using namespace std;
 
+
+//Example of a constructor
 class Student {
 public:
     int id;
@@ -17,7 +19,26 @@ public:
         cout << "Constructor called\n";
     }
 };
+//Example of a Defalt constructor:
+class Teacher{
+    public:
+    string name;
+    int id;
+    Teacher(){
+        name="Part-Time";
+        id=0;
+        cout << "Default Constructor Called\n";
+        cout<<"Name: "<<name<<endl;
+        cout<<"ID: "<<id<<endl;
+    }
+};
+
+
+
 int main() {
-    Student s;   // Constructor runs automatically
+    Student s; // Constructor runs automatically
+    Teacher t; // Constructor runs automatically
 }
+
+
 
