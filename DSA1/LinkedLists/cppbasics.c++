@@ -31,6 +31,13 @@ class Teacher{
         cout<<"Name: "<<name<<endl;
         cout<<"ID: "<<id<<endl;
     }
+    Teacher(string name,int id){
+        this->name=name;
+        this->id=id;
+        cout << "Parameterized Constructor Called\n";
+        cout<<"Name: "<<name<<endl;
+        cout<<"ID: "<<id<<endl;
+    }
 };
 
 
@@ -38,6 +45,7 @@ class Teacher{
 int main() {
     Student s; // Constructor runs automatically
     Teacher t; // Constructor runs automatically
+    Teacher T1("Salman",508);
 }
 
 
