@@ -41,6 +41,17 @@ class Teacher{
 };
 
 
+class Parents {
+public:
+    Parents() {
+        cout << "Parent Constructor\n";
+    }
+
+    ~Parents(){
+        cout<<"Parent Destructor\n";
+    }
+};
+
 
 int main() {
     Student s; // Constructor runs automatically
