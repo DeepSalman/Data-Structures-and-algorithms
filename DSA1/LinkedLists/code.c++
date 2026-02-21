@@ -59,14 +59,20 @@ class List{
         if(head==NULL){
             cout<<"Empty List"<<endl;
         }
-        Node* temp = head;
-        while(temp->next!=tail){
-            temp = temp->next;
+        else if(head->next==NULL){
+            delete head;
+            head=tail=NULL;
         }
-        temp->next=NULL;
-        delete tail;
-        tail = temp;
-        
+        else{
+            Node* temp=head;
+            while(temp->next!=tail){
+                temp=temp->next;
+            }
+            temp->next=NULL;
+            delete tail;
+            tail=temp;
+        }
+
     }
     void printli(){
         Node* temp=head;
