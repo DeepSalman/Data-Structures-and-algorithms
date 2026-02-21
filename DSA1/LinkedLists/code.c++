@@ -54,6 +54,10 @@ class List{
             delete temp;
         }
     }
+
+    void pop_back(){
+        
+    }
     void printli(){
         Node* temp=head;
         while(temp!=NULL){
