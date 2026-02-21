@@ -31,6 +31,7 @@ class List{
             head=newNode; //update the head of the list to be the new node
         }
     }
+    
 };
 
 int main(){
