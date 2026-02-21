@@ -42,6 +42,18 @@ class List{
         }
 
     }
+
+    void pop_front(){
+        if(head==NULL){
+            cout<<"Empty list cannot be Deleated !"<<endl;
+        }
+        else{
+            Node* temp=head;
+            head = head->next;
+            temp->next=NULL;
+            delete temp;
+        }
+    }
     void printli(){
         Node* temp=head;
         while(temp!=NULL){
