@@ -31,6 +31,17 @@ class List{
             head=newNode; //update the head of the list to be the new node
         }
     }
+    void push_back(int data){
+        Node* newNode = new Node(data); //Creating a new node
+        if(head==NULL){
+            head=tail=newNode;
+        }
+        else{
+            tail->next=newNode;
+            tail=newNode;
+        }
+
+    }
     void printli(){
         Node* temp=head;
         while(temp!=NULL){
@@ -48,6 +59,7 @@ int main(){
     li.push_front(1);
     li.push_front(2);
     li.push_front(3);
+    li.push_back(0);
 
     li.printli();
 
