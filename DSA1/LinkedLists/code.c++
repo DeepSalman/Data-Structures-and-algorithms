@@ -56,6 +56,16 @@ class List{
     }
 
     void pop_back(){
+        if(head==NULL){
+            cout<<"Empty List"<<endl;
+        }
+        Node* temp = head;
+        while(temp->next!=tail){
+            temp = temp->next;
+        }
+        temp->next=NULL;
+        delete tail;
+        tail = temp;
         
     }
     void printli(){
