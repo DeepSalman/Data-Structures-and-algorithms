@@ -31,7 +31,16 @@ class List{
             head=newNode; //update the head of the list to be the new node
         }
     }
-    
+    void printli(){
+        Node* temp=head;
+        while(temp!=NULL){
+
+            cout<<temp->data<<"->";
+            temp=temp->next;
+        }
+        cout<<"NULL"<<endl;
+    }
+
 };
 
 int main(){
@@ -40,6 +49,7 @@ int main(){
     li.push_front(2);
     li.push_front(3);
 
+    li.printli();
 
 
     return 0;
