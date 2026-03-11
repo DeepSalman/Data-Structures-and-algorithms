@@ -1,33 +1,33 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int a[] = {4,3,1,6,1,3,4,4};
-    int n = 8;
-    int freq[100] = {0};
-    int i,j,temp;
+int main(){
+    int n;
+    printf("Enter the size of your desired array: \n");
+    scanf("%d",&n);
 
-    // Count frequency
-    for(i=0;i<n;i++){
-        freq[a[i]]++;
+    int arr[n];
+    printf("Enter the array Elements: \n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
     }
 
-    // Sort array based on frequency
-    for(i=0;i<n-1;i++){
-        for(j=0;j<n-i-1;j++){
+    int freq[1000]={0};
 
-            if(freq[a[j]] < freq[a[j+1]] ||(freq[a[j]] == freq[a[j+1]] && a[j] > a[j+1])){
+    for(int i=0;i<n;i++){
+        freq[arr[i]]++;
+    }
 
-                temp = a[j];
-                a[j] = a[j+1];
-                a[j+1] = temp;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-1;j++){
+            if(freq[arr[j]]<freq[arr[j+1]]||(freq[arr[j]]==freq[arr[j+1]] && arr[j]>arr[j+1])){
+                int temp = arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
             }
         }
     }
 
-    // Print result
-    for(i=0;i<n;i++){
-        printf("%d ",a[i]);
+    for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
     }
-
-    return 0;
 }
