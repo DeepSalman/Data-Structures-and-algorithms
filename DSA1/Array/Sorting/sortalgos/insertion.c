@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-void Bubblesrt(int arr[], int size){
+void Insertion(int arr[], int size){
     for(int i=1;i<size;i++){
         int key = arr[i];
         int j=i-1;
@@ -25,7 +25,7 @@ int main(){
         scanf("%d",&arr[i]);
     }
 
-    Bubblesrt(arr,size);
+    Insertion(arr,size);
     printf("Sorted array: ");
     for(int i=0;i<size;i++){
         printf("%d ",arr[i]);
