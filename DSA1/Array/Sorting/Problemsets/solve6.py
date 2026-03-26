@@ -1,5 +1,5 @@
 class Solution:
-    def sortEvenOdd(self, nums: List[int]) -> List[int]:
+    def sortEvenOdd(self, nums: list[int]) -> list[int]:
         arrEven=[]
         arrOdd=[]
         arrRes=[]
@@ -12,15 +12,23 @@ class Solution:
 
         arrEven=sorted(arrEven)
         arrOdd=sorted(arrOdd,reverse=True)
-        evenindx,oddindx=0,0
+        evenIndex,oddIndex=0,0
         for i in range(len(nums)):
             if i%2==0:
-                arrRes.append(arrEven[evenindx])
-                evenindx+=1
+                arrRes.append(arrEven[evenIndex])
+                evenIndex+=1
             else:
-                arrRes.append(arrOdd[oddindx])
-                oddindx+=1
+                arrRes.append(arrOdd[oddIndex])
+                oddIndex+=1
         return arrRes
+    
 
+
+sol = Solution()
+
+input_list = [16,17,4,18,1,20,5,12]
+result = sol.sortEvenOdd(input_list)
+
+print(result)
 
         
