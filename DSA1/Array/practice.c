@@ -1,17 +1,19 @@
 #include<stdio.h>
 #include<math.h>
+#include<string.h>
 
-struct Element
+
+struct StElm
 {
-    int realValue;
-    int ValueUesdForSorting;
+    char realValue[20];
+    int sortValue;
 };
 
-void Insertionsrt(struct Element A[], int size){
-    for(int i=1;i<size;i++){
-        struct Element key = A[i];
+void insertionsort(struct StElm A[],int size){
+    for(int i=0;i<size;i++){
+        struct StElm key = A[i];
         int j=i-1;
-        while(j>=0 && A[j].ValueUesdForSorting>key.ValueUesdForSorting){
+        while(j>=0 && A[j].sortValue>key.sortValue){
             A[j+1]=A[j];
             j--;
         }
@@ -19,28 +21,33 @@ void Insertionsrt(struct Element A[], int size){
     }
 }
 
-
 int main(){
     int size;
-    printf("Enter your array size: ");
+    printf("Enter your Char array Size: ");
     scanf("%d",&size);
+    getchar();
 
-    struct Element A[size];
+    struct StElm A[size];
 
-    printf("Enter your array Elements: ");
+    printf("Enter your strings: ");
     for(int i=0;i<size;i++){
-        scanf("%d",&A[i].realValue);
+        fgets(A[i].realValue,sizeof(A[i].realValue),stdin);
     }
 
-    //Converting elements 
     for(int i=0;i<size;i++){
-        A[i].ValueUesdForSorting=abs(A[i].realValue);
+        A[i].sortValue=strlen(A[i].realValue);
     }
 
-    Insertionsrt(A,size);
-    printf("Your array is : ");
+    
+    printf("Your provided array: ");
     for(int i=0;i<size;i++){
-        printf("%d ",A[i].realValue);
+        printf("%s ",A[i].realValue);
+    }
+
+    insertionsort(A,size);
+
+    printf("Sorted array: ");
+    for(int i=0;i<size;i++){
+        printf("%s ",A[i].realValue);
     }
 }
-

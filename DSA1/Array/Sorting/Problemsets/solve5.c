@@ -37,7 +37,8 @@ int main(){
     printf("Enter the array values\n");
 
     for(int i=0;i<n;i++){
-        gets(A[i].realValue);
+        fgets(A[i].realValue, sizeof(A[i].realValue), stdin);
+        A[i].realValue[strcspn(A[i].realValue, "\n")] = '\0';
     }
     for(int i=0;i<n;i++){
         A[i].valueUsedForSorting = strlen(A[i].realValue);
