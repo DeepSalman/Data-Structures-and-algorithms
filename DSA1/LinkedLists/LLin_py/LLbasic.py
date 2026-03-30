@@ -50,13 +50,12 @@ class LinkedList:
             self.head = self.head.nextNode
             return
         traveler = self.head
-        while traveler.nextNode != None:
-            if traveler.nextNode.value == value:
-                traveler.nextNode = traveler.nextNode.nextNode
-                return
+        while traveler!=None:
+            if traveler.nextNode.value==value:
+                traveler.nextNode=traveler.nextNode.nextNode
+                return 
             traveler = traveler.nextNode
-
-    # PRINT / TRAVERSAL
+    
     def print_list(self):
         traveler = self.head
         while traveler != None:
