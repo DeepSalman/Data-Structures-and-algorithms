@@ -83,6 +83,15 @@ class LinkedList:
             traveler=traveler.nextNode
         return max
 
+    def search(self,value):
+        traveler = self.head
+        position = 0
+        while traveler != None:
+            if traveler.value==value:
+                return (True,position,traveler)
+            traveler=traveler.nextNode
+            position+=1
+        return (False,-1,None)
     
     def print_list(self):
         traveler = self.head
@@ -90,6 +99,9 @@ class LinkedList:
             print(traveler.value, end=" → ")
             traveler = traveler.nextNode
         print("None")
+
+    
+
 
 
 # ---- TEST ----
