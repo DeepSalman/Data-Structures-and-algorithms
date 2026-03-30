@@ -55,6 +55,34 @@ class LinkedList:
                 traveler.nextNode=traveler.nextNode.nextNode
                 return 
             traveler = traveler.nextNode
+
+    def total(self):
+        traveler = self.head
+        total = 0
+        while traveler != None:
+            total+=traveler.value
+            traveler=traveler.nextNode
+        return total
+    
+    def count(self):
+        traveler=self.head
+        count=0
+        while traveler != None:
+            count+=1
+            traveler=traveler.nextNode
+        return count
+    
+    def max_val(self):
+        if self.head is None:
+            return None
+        max=self.head.value
+        traveler=self.head
+        while traveler != None:
+            if traveler.value>max:
+                max = traveler.value
+            traveler=traveler.nextNode
+        return max
+
     
     def print_list(self):
         traveler = self.head
