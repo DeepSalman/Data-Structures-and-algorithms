@@ -1,0 +1,85 @@
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.nextNode = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    # INSERT HEAD
+    def insert_head(self, value):
+        new_node = Node(value)
+        new_node.nextNode = self.head
+        self.head = new_node
+
+    # INSERT TAIL
+    def insert_tail(self, value):
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+            return
+        traveler = self.head
+        while traveler.nextNode != None:
+            traveler = traveler.nextNode
+        traveler.nextNode = new_node
+
+    # DELETE HEAD
+    def delete_head(self):
+        if self.head is None:
+            return
+        self.head = self.head.nextNode
+
+    # DELETE TAIL
+    def delete_tail(self):
+        if self.head is None:
+            return
+        if self.head.nextNode is None:
+            self.head = None
+            return
+        traveler = self.head
+        while traveler.nextNode.nextNode != None:
+            traveler = traveler.nextNode
+        traveler.nextNode = None
+
+    # DELETE VALUE
+    def delete_value(self, value):
+        if self.head is None:
+            return
+        if self.head.value == value:
+            self.head = self.head.nextNode
+            return
+        traveler = self.head
+        while traveler.nextNode != None:
+            if traveler.nextNode.value == value:
+                traveler.nextNode = traveler.nextNode.nextNode
+                return
+            traveler = traveler.nextNode
+
+    # PRINT / TRAVERSAL
+    def print_list(self):
+        traveler = self.head
+        while traveler != None:
+            print(traveler.value, end=" → ")
+            traveler = traveler.nextNode
+        print("None")
+
+
+# ---- TEST ----
+ll = LinkedList()
+ll.insert_tail(10)
+ll.insert_tail(20)
+ll.insert_tail(30)
+ll.insert_head(5)
+ll.print_list()          # 5 → 10 → 20 → 30 → None
+
+ll.delete_head()
+ll.print_list()          # 10 → 20 → 30 → None
+
+ll.delete_tail()
+ll.print_list()          # 10 → 20 → None
+
+ll.insert_tail(50)
+ll.insert_tail(70)
+ll.delete_value(50)
+ll.print_list()          # 10 → 20 → 70 → None
