@@ -113,6 +113,30 @@ class LinkedList:
                     traveler.value,traveler.nextNode.value=traveler.nextNode.value,traveler.value
                     swapped = True
                 traveler=traveler.nextNode
+
+    def update(self,current_val,new_val):
+        traveler = self.head
+        while traveler!= None:
+            if traveler.value==current_val:
+                traveler.value=new_val
+                return True
+            traveler=traveler.nextNode
+        return False
+    
+    def update_at(self,position,new_val):
+        traveler=self.head
+        current_position=0
+        while traveler!=None:
+            if current_position==position:
+                traveler.value=new_val
+                return True
+            traveler=traveler.nextNode
+            current_position+=1
+
+        return False
+
+
+    
             
             
 
