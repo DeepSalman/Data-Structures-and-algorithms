@@ -134,6 +134,16 @@ class LinkedList:
             current_position+=1
 
         return False
+    
+    def reverse(self):
+        prev=None
+        current=self.head
+        while current!=None:
+            next_node=current.nextNode
+            current.nextNode=prev
+            prev=current
+            current=next_node
+        self.head = prev
 
 
     
