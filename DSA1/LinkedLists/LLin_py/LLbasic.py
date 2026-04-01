@@ -100,6 +100,22 @@ class LinkedList:
             traveler = traveler.nextNode
         print("None")
 
+    def sort(self):
+        if self.head is None:
+            return 
+        swapped = True
+
+        while swapped:
+            swapped = False
+            traveler = self.head
+            while traveler.nextNode!=None:
+                if traveler.value>traveler.nextNode.value:
+                    traveler.value,traveler.nextNode.value=traveler.nextNode.value,traveler.value
+                    swapped = True
+                traveler=traveler.nextNode
+            
+            
+
     
 
 
