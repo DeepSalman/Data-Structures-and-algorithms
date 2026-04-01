@@ -100,7 +100,7 @@ class LinkedList:
             traveler = traveler.nextNode
         print("None")
 
-    def sort(self):
+    def sort(self):#Memory Limit exceeds 
         if self.head is None:
             return 
         swapped = True
