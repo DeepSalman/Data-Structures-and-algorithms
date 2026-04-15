@@ -66,8 +66,8 @@ void insertMiddle(int value){
         head=newNode;
         return;
     }
-    if(head->next==NULL){
-        head->next=newNode;
+    if(head->nextNode==NULL){
+        head->nextNode=newNode;
         newNode->previousNode=head;
         return;
     }
