@@ -24,6 +24,28 @@ void insertHead(int value){
     }
 
 }
+void insertTail(int value){
+    struct Node* newNode= malloc(sizeof(struct Node));
+    newNode->value=value;
+    newNode->nextNode=NULL;
+    newNode->previousNode=NULL;
+
+
+    if(head==NULL){
+        head=newNode;
+        return;
+    }
+    struct Node * traveller=head;
+    while(traveller->nextNode!=NULL){
+        traveller=traveller->nextNode;
+    }
+
+    traveller->nextNode=newNode;
+    newNode->previousNode=traveller;
+
+
+
+}
 
 
 
