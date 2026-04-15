@@ -96,6 +96,18 @@ void insertMiddle(int value){
 }
 
 
+void updateValue(int currentValue,int newValue){
+    struct Node* location = search(currentValue);
+    if(location==NULL){
+        printf("Not found");
+        return;
+    }
+    location->value=newValue;
+
+
+}
+
+
 
 
 
