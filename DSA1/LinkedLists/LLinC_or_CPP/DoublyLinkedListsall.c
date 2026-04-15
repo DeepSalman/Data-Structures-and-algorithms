@@ -56,6 +56,45 @@ struct Node* search(int searchValue){
     return NULL;
 
 }
+void insertMiddle(int value){
+    struct Node *newNode = malloc(sizeof(struct Node));
+    newNode->value = value;
+    newNode->nextNode = NULL;
+    newNode->previousNode = NULL;
+
+    if(head==NULL){
+        head=newNode;
+        return;
+    }
+    if(head->next==NULL){
+        head->next=newNode;
+        newNode->previousNode=head;
+        return;
+    }
+
+    struct Node *fast = head;
+    struct Node *slow = head;
+    while(1){
+        if(fast->nextNode==NULL){
+
+            break;
+        }
+        if(fast->nextNode->nextNode==NULL){
+            break;
+        }
+        fast = fast->nextNode->nextNode;
+        slow = slow ->nextNode;
+
+    }
+    newNode->previousNode=slow;
+    newNode->nextNode=slow->nextNode;
+    slow->nextNode=newNode;
+    newNode->nextNode->previousNode=newNode;
+
+
+
+}
+
 
 
 
