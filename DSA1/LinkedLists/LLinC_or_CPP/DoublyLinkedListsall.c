@@ -107,7 +107,42 @@ void updateValue(int currentValue,int newValue){
 
 }
 
+void deleteValue(int value){
+    struct Node *ptr = search(value);
+    if(ptr==NULL){
+        printf("The value you want to delete does not exist!\n");
+        return;
+    }
 
+    if(ptr->nextNode==NULL && ptr->previousNode==NULL){
+        head=NULL;
+        free(ptr);
+        return ;
+    }
+    if(ptr->previousNode==NULL && ptr->nextNode!=NULL){
+        head=head->next;
+        head->previousNode=NULL;
+        free(ptr);
+        return ;
+    }
+    if(ptr->previousNode!=NULL && ptr->nextNode!=NULL){
+        ptr->previousNode->nextNode = ptr->nextNode;
+        ptr->nextNode->previousNode= ptr->previousNode;
+        free(ptr);
+        return ;
+
+    }
+
+    if(ptr->prev!=NULL && ptr->next==NULL){
+        ptr->previousNode->nextNode = NULL;
+        free(ptr);
+        return ;
+    }
+
+
+
+
+}
 
 
 
