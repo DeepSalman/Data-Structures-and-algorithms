@@ -46,6 +46,16 @@ void insertTail(int value){
 
 
 }
+struct Node* search(int searchValue){
+    struct Node* traveler=head;
+    while(traveler!=NULL){
+        if(traveler->value==searchValue){
+            return traveler;
+        }
+    }
+    return NULL;
+
+}
 
 
 
