@@ -120,7 +120,7 @@ void deleteValue(int value){
         return ;
     }
     if(ptr->previousNode==NULL && ptr->nextNode!=NULL){
-        head=head->next;
+        head=head->nextNode;
         head->previousNode=NULL;
         free(ptr);
         return ;
@@ -133,7 +133,7 @@ void deleteValue(int value){
 
     }
 
-    if(ptr->prev!=NULL && ptr->next==NULL){
+    if(ptr->previousNode!=NULL && ptr->nextNode==NULL){
         ptr->previousNode->nextNode = NULL;
         free(ptr);
         return ;
