@@ -1,3 +1,88 @@
+/*
+=========================================
+CIRCULAR QUEUE + BINARY NUMBER GENERATION
+=========================================
+
+QUEUE STRUCTURE:
+- Array based circular queue
+- front → points to first element
+- rear  → points to last element
+- size  → fixed capacity
+
+-----------------------------------------
+ENQUEUE (INSERT OPERATION)
+-----------------------------------------
+CASE 1: Queue is empty
+- front = 0, rear = 0
+- insert first element
+
+CASE 2: Queue is full
+Condition:
+(rear + 1) % size == front
+- This means next position of rear hits front → overflow
+
+CASE 3: Normal insertion
+- rear = (rear + 1) % size
+- insert element at rear
+
+-----------------------------------------
+DEQUEUE (REMOVE OPERATION)
+-----------------------------------------
+CASE 1: Queue is empty
+- front == -1 && rear == -1
+- underflow
+
+CASE 2: Only one element
+- store arr[front]
+- reset front = rear = -1
+- return element
+
+CASE 3: Normal deletion
+- store arr[front]
+- front = (front + 1) % size
+- return stored value
+
+-----------------------------------------
+PRINT FUNCTION
+-----------------------------------------
+- prints entire array (not logical queue view)
+- also prints front and rear positions
+
+-----------------------------------------
+IMPORTANT PATTERN:
+-----------------------------------------
+"Circular movement using MOD operator"
+=> (index + 1) % size
+
+-----------------------------------------
+BINARY NUMBER GENERATION IDEA:
+-----------------------------------------
+START:
+- enqueue 1
+
+PROCESS:
+- dequeue a number (say x)
+- generate:
+    x * 10   → left child (append 0)
+    x * 10+1 → right child (append 1)
+- enqueue both back
+
+-----------------------------------------
+WHY THIS WORKS:
+-----------------------------------------
+- Queue ensures BFS order
+- Each number expands into next binary level
+- Produces binary numbers in sequence order:
+  1, 10, 11, 100, 101, ...
+
+-----------------------------------------
+KEY MEMORY LINE:
+-----------------------------------------
+"QUEUE = LEVEL ORDER GENERATOR"
+*/
+
+
+
 #include<iostream>
 using namespace std;
 
