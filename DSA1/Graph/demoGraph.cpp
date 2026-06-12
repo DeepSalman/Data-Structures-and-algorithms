@@ -18,7 +18,7 @@ void printAdjList(vector <  vector <int> > adjList){
 }
 
 int main(){
-    vector <  vector <int> > adjList;
+    vector <vector <int> > adjList;
 
     int V,E;
     cout<<"Enter the number of vertices "<<endl;
