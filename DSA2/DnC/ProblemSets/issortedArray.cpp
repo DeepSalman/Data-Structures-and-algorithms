@@ -1,3 +1,6 @@
+//Check whether an array is sorted 
+//in ascending order using divide and conquer
+
 #include <iostream>
 using namespace std;
 

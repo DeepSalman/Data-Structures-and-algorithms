@@ -2,25 +2,31 @@
 #include <cctype>
 using namespace std;
 
-struct Count {
+class Count {
+public:
     int vowels;
     int consonants;
+
+    Count() {
+        vowels = 0;
+        consonants = 0;
+    }
 };
 
 Count countVC(string &str, int low, int high) {
+
+    // Base Case
     if (low == high) {
-        Count result = {0, 0};
+        Count ans;
 
-        if (isalpha(str[low])) {
-            char ch = tolower(str[low]);
+        char ch = tolower(str[low]);
 
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
-                result.vowels = 1;
-            else
-                result.consonants = 1;
-        }
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+            ans.vowels++;
+        else
+            ans.consonants++;
 
-        return result;
+        return ans;
     }
 
     int mid = low + (high - low) / 2;
@@ -28,20 +34,21 @@ Count countVC(string &str, int low, int high) {
     Count left = countVC(str, low, mid);
     Count right = countVC(str, mid + 1, high);
 
-    Count result;
-    result.vowels = left.vowels + right.vowels;
-    result.consonants = left.consonants + right.consonants;
+    Count ans;
+    ans.vowels = left.vowels + right.vowels;
+    ans.consonants = left.consonants + right.consonants;
 
-    return result;
+    return ans;
 }
 
 int main() {
+
     string str = "HelloWorld";
 
-    Count ans = countVC(str, 0, str.length() - 1);
+    Count result = countVC(str, 0, str.length() - 1);
 
-    cout << "Vowels: " << ans.vowels << endl;
-    cout << "Consonants: " << ans.consonants << endl;
+    cout << "Vowels: " << result.vowels << endl;
+    cout << "Consonants: " << result.consonants << endl;
 
     return 0;
 }

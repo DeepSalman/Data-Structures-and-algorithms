@@ -1,3 +1,7 @@
+//Search for a target value in a sorted array using 
+//binary search, and count how many recursive
+//calls it takes.
+
 #include <iostream>
 using namespace std;
 
@@ -20,7 +24,7 @@ int binarySearch(int arr[], int low, int high, int target) {
 }
 
 int main() {
-    int arr[] = {2, 4, 6, 8, 10, 12, 14, 16};
+    int arr[] = {10, 2, 4, 6, 8, 12, 14, 16};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     int target = 10;

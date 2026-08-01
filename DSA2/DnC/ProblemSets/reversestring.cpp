@@ -1,3 +1,6 @@
+//Reverse a string using divide and conquer 
+//by swapping the two ends and recursing inward.
+
 #include <iostream>
 using namespace std;
 

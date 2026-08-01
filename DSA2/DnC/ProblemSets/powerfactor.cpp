@@ -1,3 +1,7 @@
+//Compute x raised to the power 
+//n in about log n steps using divide and conquer 
+//(fast exponentiation).
+
 #include <iostream>
 using namespace std;
 
