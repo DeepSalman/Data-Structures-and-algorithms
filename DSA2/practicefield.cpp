@@ -1,54 +1,31 @@
+#include<stdio.h>
 #include<iostream>
-#include<cctype>
+#include<algorithm>
 using namespace std;
 
-struct A {
-    char id;
-    int start;
-    int finish;
 
-};
-
-bool compare (A a, A b){
-    return a.finish<b.finish;
-}
 
 int main(){
-    A activities[] = {
-        {'A', 1, 4},
-        {'B', 3, 5},
-        {'C', 0, 6},
-        {'D', 5, 7},
-        {'E', 3, 9},
-        {'F', 5, 9},
-        {'G', 6, 10},
-        {'H', 8, 11},
-        {'I', 8, 12},
-        {'J', 2, 14},
-        {'K', 12, 16}
-    };
+    int coins[]= {1,2,5,10,20,50,100,200,500,1000};
+    int n = sizeof(coins)/sizeof(coins[0]);
 
+    int TargetAmount = 1260;
+    int coinCount = 0;
 
-    int n = sizeof(activities)/sizeof(activities[0]);
-    sort(activities,activities+n,compare);
+    sort(coins,coins+n,greater<int>());
 
-    cout<<"Sorted activities: \n";
-    for (int i=0;i<n;i++){
-        cout<< activities[i].id << " "
-        << activities[i].start<<" "
-        <<activities[i].finish<<endl;
-    }
-
-    cout<<"\nSelected Activities \n";
-    int lastFinish = -1;
-    int count = 0;
-    for(int i =0;i<n;i++){
-        if(activities[i].start>=lastFinish){
-            count++;
-            cout<<activities[i].id<<" ";
-            lastFinish = activities[i].finish;
+    cout<<"Coins Selected: ";
+    for(int i=0;i<n;i++){
+        while(TargetAmount>=coins[i]){
+            cout<<coins[i]<<" ";
+            TargetAmount-=coins[i];
+            coinCount++;
         }
     }
-    cout<<"\nYour total task: "<<count;
+
+    cout<<endl;
+    cout<<"Total Coins: "<<coinCount<<endl;
+
     return 0;
+
 }
